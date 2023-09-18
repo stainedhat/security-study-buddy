@@ -1,0 +1,7 @@
+fastapi
+pydantic
+uvicorn[standard]
+gunicorn
+databases
+aiosqlite
+sqlalchemy>=1.4.49,<1.5
