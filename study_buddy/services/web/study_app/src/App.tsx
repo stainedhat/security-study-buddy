@@ -14,7 +14,7 @@ function App() {
                     setQuestions(data);
                 }
             ).catch(
-                (err) => {
+                () => {
                     setIsError(true);
                 }
             )
@@ -23,7 +23,12 @@ function App() {
         }, []
     )
     return (
-        <div><QuestionList list_name={"Questions"} items={questions}/></div>
+        <>
+            {isError ? console.log("Error") : (
+                <div><QuestionList items={questions}/></div>
+            )
+            }
+        </>
     )
 }
 
