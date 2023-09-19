@@ -19,17 +19,9 @@ questions = Table(
     metadata,
     Column("question_id", Integer, primary_key=True),
     Column("question", String),
+    Column("answer", String),
     Column("category", String),
 )
-
-answers = Table(
-    "answers",
-    metadata,
-    Column("answer_id", Integer, primary_key=True),
-    Column("question_id", Integer, ForeignKey("questions.question_id")),
-    Column("answer", String)
-)
-
 
 engine = create_engine(
     DATABASE_URL, connect_args={"check_same_thread": False}
