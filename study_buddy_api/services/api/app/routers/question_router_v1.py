@@ -8,7 +8,11 @@ from models.question_models_v1 import Question, QuestionWithoutAnswer, NewQuesti
 router = APIRouter(
     prefix="/questions",
     tags=["questions"],
-    responses={404: {"description": "Not found"}},
+    responses={
+        404: {"error": "Not found"},
+        422: {"error": "Invalid object schema!"},
+        500: {"error": "Oops, something went wrong!"}
+    },
 )
 
 
