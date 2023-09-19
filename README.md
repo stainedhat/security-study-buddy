@@ -8,7 +8,7 @@ This project is a simple API to help study for security engineering interviews. 
 #### API: FastAPI
 The backend for this is a FastAPI server that provides a set of CRUD actions to manage questions and answers
 
-#### Frontend: ?
+#### Frontend: React
 Frontend is TBD
 
 #### Data: sqlite (for now)
