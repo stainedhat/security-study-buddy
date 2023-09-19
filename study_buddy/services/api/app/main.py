@@ -1,8 +1,8 @@
-from typing import Union
-
 from fastapi import FastAPI
-from routers import question_router_v1
+from fastapi.middleware.cors import CORSMiddleware
+
 from data.db import database
+from routers import question_router_v1
 
 
 def create_app():
@@ -17,6 +17,18 @@ def create_app():
 
 
 app = create_app()
+
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"]
+)
 
 
 @app.on_event("startup")
